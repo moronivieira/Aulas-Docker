@@ -8,8 +8,8 @@
 <ul>
   <li>Criar uma nova pasta para o laboratório:</li>
 </ul>
-mkdir lab-11
-cd lab-11
+```mkdir lab-11```
+```cd lab-11```
 
 # Instruções
 <ul>
@@ -50,17 +50,35 @@ volumes:
   <li>Iniciando o contêiner em modo daemon</li>
 </ul>
 
-``` docker-compose up -d ```
+```docker compose up -d ```
 
 <ul>
   <li>Até o container inicializa, inspecione os logs do Wordpress </li>
 </ul>
 
-```docker-compose logs -f wordpress```
+```docker compose logs -f wordpress```
 
-# Cheque o container rodando
+<ul>
+  <li>Visualize o container rodando</li>
+</ul>
 
-```docker-compose ps```
+```docker compose ps```
 
-# Browse to the wordpress portal:
+<ul>
+  <li>Navegue para o portal WordPress Local</li>
+</ul>
 
+```http://<SEU IP>:8000```
+
+<ul>
+  <li>Entre no container do MySQL</li>
+</ul>
+
+
+```docker compose exec db bin/bash```
+
+<ul>
+  <li>Imprima a variável de ambiente "MYSQL_USER" (configurada dentro do arquivo yaml)</li>
+</ul>
+
+```echo $MYSQL_USER```
