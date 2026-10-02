@@ -20,7 +20,7 @@
 
 services:
   db:
-    image: mysql:5.7
+    image: mysql:26.6.0
     volumes:
     - db_data:/var/lib/mysql
     restart: always
@@ -82,3 +82,43 @@ volumes:
 </ul>
 
 ```echo $MYSQL_USER```
+
+<ul>
+  <li>Saia do container</li>
+</ul>
+
+```exit```
+
+<ul>
+  <li>Atualize a imagem do mysql no arquivo <b>docker compose</b> para a versão 26.7.0</li>
+</ul>
+
+```db:
+  image: mysql:26.7.0
+  volumes:
+  - db_data:/var/lib/mysql
+  restart: always
+  environment:
+    MYSQL_ROOT_PASSWORD: somewordpress
+    MYSQL_DATABASE: wordpress
+    MYSQL_USER: admin
+    MYSQL_PASSWORD: wordpress
+```
+
+<ul>
+  <il>Limpe o ambiente (remova os contêineres definidos no arquivo docker-compose):</il>
+</ul>
+
+```docker-compose down```
+
+<ul>
+  <li>Aplique as alterações ao ambiente de execução:</li>
+</ul>
+
+```docker-compose up -d```
+
+<ul>
+  <il>Observe que os volumes não são excluídos por padrão, então você pode recriar o ambiente a qualquer momento</il>
+</ul>
+
+```docker volume ls```
