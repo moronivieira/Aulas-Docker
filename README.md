@@ -8,7 +8,9 @@
 <ul>
   <li>Criar uma nova pasta para o laboratório:</li>
 </ul>
+
 ```mkdir lab-11```
+
 ```cd lab-11```
 
 # Instruções
